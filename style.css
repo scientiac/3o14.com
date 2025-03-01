@@ -24,8 +24,20 @@ body, html {
     font-size: 3rem;
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.centered p {
+    display: block;
+    margin: 0;
+}
+
+.main {
+    font-size: 1rem;
+    font-family: 'Fantasque Sans Mono', sans-serif;
 }
 
 footer {
