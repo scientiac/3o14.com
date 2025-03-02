@@ -12,8 +12,8 @@ body, html {
 
 @media (prefers-color-scheme: light) {
     body, html {
-	background-color: #f0f0f0;
-	color: #0f0f0f;
+      background-color: #fff;
+      color: #0f0f0f;
     }
 }
 
