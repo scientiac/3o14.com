@@ -1,26 +1,3 @@
-svg {
-    width: 50%;
-    height: 50%;
-}
-
-.pi-circle {
-    fill: none;
-    stroke: #fff;
-    stroke-width: 1;
-    stroke-dasharray: 942;
-    stroke-dashoffset: 942;
-    animation: drawCircle 14s linear forwards;
-}
-
-@keyframes drawCircle {
-    from {
-        stroke-dashoffset: 942;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
 body, html {
     height: 100dvh;
     margin: 0;

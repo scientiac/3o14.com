@@ -1,0 +1,260 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 400px;
+}
+
+/* Circle animation */
+.pi-circle {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 314; /* Circumference ≈ 2 * π * 50 ≈ 314 */
+  stroke-dashoffset: 314;
+  animation: 
+    drawCircle 2s linear forwards,
+    moveCircleToStart 1s ease-in-out 9s forwards,
+    fadeOut 0s ease-in-out 10s forwards,
+    bringBackCircle 1s ease-in-out 15s forwards;
+}
+
+.pi-circle-const {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 314; /* Circumference ≈ 2 * π * 50 ≈ 314 */
+  stroke-dashoffset: 314;
+  animation: drawCircle 2s linear forwards;
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes moveCircleToStart {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, 150px);
+  }
+}
+
+/* Original diameter inside the circle */
+.diameter {
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 100; /* Diameter = 100px */
+  stroke-dashoffset: 100;
+  animation: 
+    drawLine 1s linear 2s forwards, /* Draw at 2s */
+    moveDiameter1 0.5s ease-in-out 3.5s forwards, /* Move to first position */
+    moveDiameter2 0.5s ease-in-out 4.5s forwards, /* Move to second position */
+    moveDiameter3 0.5s ease-in-out 5.5s forwards, /* Move to third position */
+    moveDiameter4 0.5s ease-in-out 6.5s forwards, /* Move to fourth position */
+    fadeOut 0.5s ease-in-out 7.5s forwards; /* Fade out after stamping */
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes moveDiameter1 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(-200px, 100px); opacity: 0; }
+}
+
+@keyframes moveDiameter2 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(-90px, 100px); opacity: 0; }
+}
+
+@keyframes moveDiameter3 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(20px, 100px); opacity: 0; }
+}
+
+@keyframes moveDiameter4 {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(130px, 100px); opacity: 0; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Four diameter lines that appear after stamping */
+.diameter-line {
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  opacity: 0;
+}
+
+.diameter-line1, .division-label-1, .division-tick-1 {
+  animation: 
+    appear 0.1s linear 4s forwards,
+    drawLine 0.4s linear 4s forwards;
+}
+
+.diameter-line2, .division-label-2, .division-tick-2 {
+  animation: 
+    appear 0.1s linear 5s forwards,
+    drawLine 0.4s linear 5s forwards;
+}
+
+.diameter-line3, .division-label-3, .division-tick-3 {
+  animation: 
+    appear 0.1s linear 6s forwards,
+    drawLine 0.4s linear 6s forwards;
+}
+
+.diameter-line4, .division-label-4, .division-tick-4 {
+  animation: 
+    appear 0.1s linear 7s forwards,
+    drawLine 0.4s linear 7s forwards;
+}
+
+.division-label-5, .division-tick-5 {
+  animation: 
+    appear 0.1s linear 7.5s forwards,
+    drawLine 0.4s linear 7.5s forwards;
+}
+
+@keyframes appear {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Four diameters combined into one line */
+.combined-line {
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 
+    appear 0.1s linear 8s forwards,
+    drawCombinedLine 1s linear 8s forwards;
+}
+
+@keyframes drawCombinedLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Division ticks for the 4d line */
+.division-tick {
+  stroke: #fff;
+  stroke-width: 1;
+  opacity: 0;
+}
+
+/* Division labels for the 4d line */
+.division-label {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  fill: #fff;
+  opacity: 0;
+}
+
+/* Pi line (3.14 times the diameter) */
+.pi-line {
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 314; /* ≈ π * 100 ≈ 314 */
+  stroke-dashoffset: 314;
+  opacity: 0;
+  animation: 
+    appear 0.1s linear 10s forwards,
+    drawPiLine 3.14s linear 10s forwards;
+}
+
+@keyframes drawPiLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Vertical dotted line showing pi endpoint */
+.pi-endpoint-line {
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 5, 3;
+  opacity: 0;
+  animation: 
+    appear 0.1s linear 13.5s forwards;
+}
+
+/* Container for the rolling circle and dot */
+.rolling-group {
+  opacity: 0;
+  animation:
+    appear 0s linear 10s forwards,
+    roll 3.14s linear 10s forwards,
+    fadeOut 0.5s ease-in-out 13.5s forwards;
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(50px) translateY(250px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(364px) translateY(250px) rotate(360deg);
+  }
+}
+
+/* Base circle */
+.rolling-circle {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+/* Dot fixed to the circle's edge */
+.dot {
+  fill: #ff0000;
+  animation:
+    appear 0s linear 10s forwards;
+}
+
+/* Text elements */
+.text {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  fill: #fff;
+  opacity: 0;
+}
+
+.diameter-text {
+  animation: 
+    appear 0.5s ease-in-out 2.5s forwards,
+    fadeOut 0.5s ease-in-out 7.5s forwards;
+}
+
+.diameter-4-text {
+  animation: appear 0.5s ease-in-out 8s forwards;
+}
+
+.pi-text {
+  animation: appear 0.5s ease-in-out 14.5s forwards;
+}
