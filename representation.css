@@ -27,8 +27,8 @@ body {
   animation: 
     drawCircle 2s linear forwards,
     moveCircleToStart 1s ease-in-out 9s forwards,
-    fadeOut 0s ease-in-out 10s forwards,
-    bringBackCircle 1s ease-in-out 15s forwards;
+    fadeOut 0s ease-in-out 12s forwards,
+    bringBackCircle 1s ease-in-out 16s forwards;
 }
 
 .pi-circle-const {
@@ -55,19 +55,18 @@ body {
   }
 }
 
-/* Original diameter inside the circle */
 .diameter {
   stroke: #fff;
   stroke-width: 1;
-  stroke-dasharray: 100; /* Diameter = 100px */
+  stroke-dasharray: 100;
   stroke-dashoffset: 100;
   animation: 
-    drawLine 1s linear 2s forwards, /* Draw at 2s */
-    moveDiameter1 0.5s ease-in-out 3.5s forwards, /* Move to first position */
-    moveDiameter2 0.5s ease-in-out 4.5s forwards, /* Move to second position */
-    moveDiameter3 0.5s ease-in-out 5.5s forwards, /* Move to third position */
-    moveDiameter4 0.5s ease-in-out 6.5s forwards, /* Move to fourth position */
-    fadeOut 0.5s ease-in-out 7.5s forwards; /* Fade out after stamping */
+    drawLine 1s linear 2s forwards,
+    moveDiameter1 0.5s ease-in-out 3.5s forwards,
+    moveDiameter2 0.5s ease-in-out 4.5s forwards,
+    moveDiameter3 0.5s ease-in-out 5.5s forwards,
+    moveDiameter4 0.5s ease-in-out 6.5s forwards,
+    fadeOut 0.5s ease-in-out 7.5s forwards;
 }
 
 @keyframes drawLine {
@@ -185,8 +184,8 @@ body {
   stroke-dashoffset: 314;
   opacity: 0;
   animation: 
-    appear 0.1s linear 10s forwards,
-    drawPiLine 3.14s linear 10s forwards;
+    appear 0.1s linear 12s forwards,
+    drawPiLine 3.14s linear 12s forwards;
 }
 
 @keyframes drawPiLine {
@@ -202,16 +201,16 @@ body {
   stroke-dasharray: 5, 3;
   opacity: 0;
   animation: 
-    appear 0.1s linear 13.5s forwards;
+    appear 0.1s linear 15.5s forwards;
 }
 
 /* Container for the rolling circle and dot */
 .rolling-group {
   opacity: 0;
   animation:
-    appear 0s linear 10s forwards,
-    roll 3.14s linear 10s forwards,
-    fadeOut 0.5s ease-in-out 13.5s forwards;
+    appear 0s linear 12s forwards,
+    roll 3.14s linear 12s forwards,
+    fadeOut 0.5s ease-in-out 15.5s forwards;
 }
 
 @keyframes roll {
@@ -237,6 +236,25 @@ body {
     appear 0s linear 10s forwards;
 }
 
+@keyframes moveDot {
+  0% {
+    transform: translate(50px, 200px);
+  }
+  100% {
+    transform: translate(50px, 250px);
+  }
+}
+
+.dot-mid {
+  fill: #ff0000;
+  opacity: 0;
+  transform: translate(50px, 200px);
+  animation:
+    appear 0.5s linear 10s forwards,
+    moveDot 1s linear 10.5s forwards,
+    fadeOut 0.5s ease-in-out 15.5s forwards;
+}
+
 /* Text elements */
 .text {
   font-family: Arial, sans-serif;
@@ -256,5 +274,5 @@ body {
 }
 
 .pi-text {
-  animation: appear 0.5s ease-in-out 14.5s forwards;
+  animation: appear 0.5s ease-in-out 16.5s forwards;
 }
