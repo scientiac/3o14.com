@@ -75,7 +75,10 @@ a {
 
 @media (prefers-color-scheme: light) {
     a {
-	color: #0f0f0f;
+	   color: #0f0f0f;
+    }
+    .pi-circle {
+        stroke: #000;
     }
 }
 
