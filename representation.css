@@ -215,10 +215,10 @@ body {
 
 @keyframes roll {
   0% {
-    transform: translateX(50px) translateY(250px) rotate(0deg);
+    transform: translateX(50px) translateY(250px) rotate(90deg);
   }
   100% {
-    transform: translateX(364px) translateY(250px) rotate(360deg);
+    transform: translateX(364px) translateY(250px) rotate(450deg);
   }
 }
 
@@ -227,7 +227,16 @@ body {
   fill: none;
   stroke: #fff;
   stroke-width: 1;
+  stroke-dasharray: 314; /* Circumference */
+  stroke-dashoffset: 0; /* Start fully drawn */
+  animation: eraseCircle 3.14s linear 12s forwards;
 }
+
+@keyframes eraseCircle {
+  0% { stroke-dashoffset: 0; }  /* Fully drawn at start */
+  100% { stroke-dashoffset: 314; } /* Fully erased at the end */
+}
+
 
 /* Dot fixed to the circle's edge */
 .dot {
