@@ -1,3 +1,13 @@
+:root {
+  --stroke-color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --stroke-color: #000;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,8 +16,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000;
-  color: #fff;
   overflow: hidden;
 }
 
@@ -20,7 +28,7 @@ body {
 /* Circle animation */
 .pi-circle {
   fill: none;
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 314; /* Circumference ≈ 2 * π * 50 ≈ 314 */
   stroke-dashoffset: 314;
@@ -33,7 +41,7 @@ body {
 
 .pi-circle-const {
   fill: none;
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 314; /* Circumference ≈ 2 * π * 50 ≈ 314 */
   stroke-dashoffset: 314;
@@ -56,7 +64,7 @@ body {
 }
 
 .diameter {
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
@@ -102,7 +110,7 @@ body {
 
 /* Four diameter lines that appear after stamping */
 .diameter-line {
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
@@ -146,7 +154,7 @@ body {
 
 /* Four diameters combined into one line */
 .combined-line {
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
@@ -163,7 +171,7 @@ body {
 
 /* Division ticks for the 4d line */
 .division-tick {
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   opacity: 0;
 }
@@ -178,7 +186,7 @@ body {
 
 /* Pi line (3.14 times the diameter) */
 .pi-line {
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 314; /* ≈ π * 100 ≈ 314 */
   stroke-dashoffset: 314;
@@ -196,7 +204,7 @@ body {
 
 /* Vertical dotted line showing pi endpoint */
 .pi-endpoint-line {
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 5, 3;
   opacity: 0;
@@ -225,7 +233,7 @@ body {
 /* Base circle */
 .rolling-circle {
   fill: none;
-  stroke: #fff;
+  stroke: var(--stroke-color);
   stroke-width: 1;
   stroke-dasharray: 314; /* Circumference */
   stroke-dashoffset: 0; /* Start fully drawn */
@@ -268,7 +276,7 @@ body {
 .text {
   font-family: Arial, sans-serif;
   font-size: 14px;
-  fill: #fff;
+  fill: var(--stroke-color);
   opacity: 0;
 }
 

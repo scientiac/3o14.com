@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="representation.css">
   <link href="https://fonts.cdnfonts.com/css/fantasque-sans-mono" rel="stylesheet">
+
   <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-10 25 75 75%22&gt;&lt;text y=%22.9em%22 font-size=%22100%22 fill=%22%23a1a1a1%22&gt;π&lt;/text&gt;&lt;/svg&gt;">
+
+  <script src="pi.js"></script>
 </head>
 <body>
   <div class="centered">
@@ -40,11 +43,11 @@
       <line class="division-tick division-tick-5" x1="450" y1="195" x2="450" y2="205" />
       
       <!-- Division labels for the 4d line -->
-      <text class="division-label division-label-1" x="50" y="190" text-anchor="middle">0</text>
-      <text class="division-label division-label-2" x="150" y="190" text-anchor="middle">1</text>
-      <text class="division-label division-label-3" x="250" y="190" text-anchor="middle">2</text>
-      <text class="division-label division-label-4" x="350" y="190" text-anchor="middle">3</text>
-      <text class="division-label division-label-5" x="450" y="190" text-anchor="middle">4</text>
+      <text class="text division-label division-label-1" x="50" y="190" text-anchor="middle">0</text>
+      <text class="text division-label division-label-2" x="150" y="190" text-anchor="middle">1</text>
+      <text class="text division-label division-label-3" x="250" y="190" text-anchor="middle">2</text>
+      <text class="text division-label division-label-4" x="350" y="190" text-anchor="middle">3</text>
+      <text class="text division-label division-label-5" x="450" y="190" text-anchor="middle">4</text>
       
       <!-- Pi line (circumference = π × diameter) -->
       <line class="pi-line" x1="50" y1="300" x2="364" y2="300" />
@@ -67,10 +70,8 @@
   </div>
   </div>
   <footer>
-      <p>Happy π Day 2025<p>
+    <a href="https://github.com/scientiac/3o14.com" target="_blank">[sourcecode]</a>
   </footer>
-    <marquee id="pi-marquee" scrollamount="2" direction="left"></marquee>
-  <script src="pi.js"></script>
   <script src="3o14.js"></script>
 </body>
 </html>
